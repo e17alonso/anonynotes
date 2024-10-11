@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Anonynotes</title>
+</head>
+<body>
+    <h1>Anonynotes</h1>
+
+    <!-- Textbox for note content -->
+    <form id="noteForm">
+        <textarea id="noteContent" placeholder="Write your note here..."></textarea><br>
+
+        <!-- Search bar for note ID -->
+        <input type="text" id="searchId" placeholder="Enter Note ID to Search">
+        <button type="button" onclick="searchNote()">Search</button><br><br>
+
+        <!-- Button for creating a new note -->
+        <button type="button" id="createButton" onclick="createNote()">Create Note</button>
+
+        <!-- Buttons for Save and Delete operations (hidden by default) -->
+        <button type="button" id="saveButton" onclick="saveNote()" style="display: none;">Save Changes</button>
+        <button type="button" id="deleteButton" onclick="deleteNote()" style="display: none;">Delete Note</button>
+    </form>
+
+    <div id="message"></div> <!-- Display messages here -->
+    <script src="script.js"></script>
+</body>
+</html>
