@@ -23,6 +23,11 @@
         <!-- Buttons for Save and Delete operations (hidden by default) -->
         <button type="button" id="saveButton" onclick="saveNote()" style="display: none;">Save Changes</button>
         <button type="button" id="deleteButton" onclick="deleteNote()" style="display: none;">Delete Note</button>
+
+        <!-- Add Panic and Decrypt buttons, hidden by default -->
+        <button type="button" id="panicButton" onclick="encryptNote()" style="display: none;">Panic Button (Encrypt)</button>
+        <button type="button" id="decryptButton" onclick="decryptNote()" style="display: none;">Decrypt Note</button>
+
     </form>
 
     <div id="message"></div> <!-- Display messages here -->
