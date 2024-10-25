@@ -3,34 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Anonynotes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Anonynotes</h1>
+    <div class="app-container">
+        <header>
+            <h1>Anonynotes</h1>
+            <p class="subtitle">Secure. Anonymous. Simple.</p>
+        </header>
 
-    <!-- Textbox for note content -->
-    <form id="noteForm">
-        <textarea id="noteContent" placeholder="Write your note here..."></textarea><br>
+        <main class="container">
+            <div class="search-container">
+                <div class="input-wrapper">
+                    <input type="text" id="searchId" placeholder="Enter Note ID">
+                    <button class="search-button" onclick="searchNote()">
+                        <span>Search</span>
+                    </button>
+                </div>
+            </div>
 
-        <!-- Search bar for note ID -->
-        <input type="text" id="searchId" placeholder="Enter Note ID to Search">
-        <button type="button" onclick="searchNote()">Search</button><br><br>
+            <div class="note-container">
+                <textarea id="noteContent" placeholder="Write your secure note here..."></textarea>
+            </div>
 
-        <!-- Button for creating a new note -->
-        <button type="button" id="createButton" onclick="createNote()">Create Note</button>
+            <div class="button-group">
+                <button id="createButton" class="primary-button" onclick="createNote()">
+                    <span>Create Note</span>
+                </button>
+                <button id="saveButton" class="success-button" onclick="saveNote()" style="display: none;">
+                    <span>Save Changes</span>
+                </button>
+                <button id="deleteButton" class="danger-button" onclick="deleteNote()" style="display: none;">
+                    <span>Delete Note</span>
+                </button>
+                <button id="panicButton" class="warning-button" onclick="encryptNote()" style="display: none;">
+                    <span>Panic! (Encrypt)</span>
+                </button>
+                <button id="decryptButton" class="info-button" onclick="decryptNote()" style="display: none;">
+                    <span>Decrypt Note</span>
+                </button>
+            </div>
 
-        <!-- Buttons for Save and Delete operations (hidden by default) -->
-        <button type="button" id="saveButton" onclick="saveNote()" style="display: none;">Save Changes</button>
-        <button type="button" id="deleteButton" onclick="deleteNote()" style="display: none;">Delete Note</button>
-
-        <!-- Add Panic and Decrypt buttons, hidden by default -->
-        <button type="button" id="panicButton" onclick="encryptNote()" style="display: none;">Panic Button (Encrypt)</button>
-        <button type="button" id="decryptButton" onclick="decryptNote()" style="display: none;">Decrypt Note</button>
-
-    </form>
-
-    <div id="message"></div> <!-- Display messages here -->
+            <div id="message" class="message"></div>
+        </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
